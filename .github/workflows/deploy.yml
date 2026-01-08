@@ -23,9 +23,9 @@ jobs:
     - name: Deploy to server
       run: |
         ssh ${{ secrets.SUMIT_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
-          cd /home/ubuntu/Python_FastApi
+          cd /home/ubuntu/sumit_gitaction
           git pull origin main
           source venv/bin/activate
           pip install -r requirements.txt
-          sudo systemctl restart fastapi
+          sudo systemctl restart sumit
         EOF
